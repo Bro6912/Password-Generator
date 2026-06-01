@@ -1,0 +1,260 @@
+/* --- Global Styles & Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #f8fafc;
+}
+
+/* --- Container & Card Layout --- */
+.container {
+    width: 100%;
+    max-width: 480px;
+}
+
+.generator-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: #38bdf8;
+}
+
+/* --- Password Display Area --- */
+.display-container {
+    display: flex;
+    background: #0f172a;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    border: 1px solid #334155;
+    align-items: center;
+}
+
+#password-display {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #f1f5f9;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding-right: 10px;
+    width: 100%;
+}
+
+#copy-btn {
+    background: #38bdf8;
+    color: #0f172a;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+#copy-btn:hover {
+    background: #0ea5e9;
+    transform: scale(1.03);
+}
+
+#copy-btn:active {
+    transform: scale(0.97);
+}
+
+/* --- Password Strength Indicator --- */
+.strength-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+    color: #94a3b8;
+}
+
+#strength-text {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.strength-meter {
+    flex: 0.6;
+    height: 6px;
+    background: #334155;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+#strength-bar {
+    height: 100%;
+    width: 0%;
+    background: #ef4444;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Controls & Inputs --- */
+.control-group {
+    margin-bottom: 20px;
+}
+
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+#length-val {
+    color: #38bdf8;
+    font-weight: bold;
+}
+
+/* Range Slider Custom Styling */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: #334155;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #38bdf8;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* --- Options Checkbox Grid --- */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.option-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+}
+
+.option-checkbox input {
+    display: none; /* Hide standard input */
+}
+
+/* Custom Checkbox Design */
+.custom-check {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #64748b;
+    border-radius: 4px;
+    margin-right: 10px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.option-checkbox input:checked + .custom-check {
+    background: #38bdf8;
+    border-color: #38bdf8;
+}
+
+.option-checkbox input:checked + .custom-check::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 4px;
+    height: 9px;
+    border: solid #0f172a;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* --- Error Messaging --- */
+#error-message {
+    color: #f87171;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.error-hidden {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    margin-bottom: 0 !important;
+}
+
+/* --- Main CTA Button --- */
+.btn-primary {
+    width: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #60a5fa 0%, #2563eb 100%);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 400px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .generator-card {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="generator-card">
+            <h2>Password Generator</h2>
+            
+            <div class="display-container">
+                <input type="text" id="password-display" readonly placeholder="Click Generate or change options">
+                <button id="copy-btn" title="Copy to Clipboard">
+                    <span id="copy-text">Copy</span>
+                </button>
+            </div>
+
+            <div class="strength-container">
+                <span>Strength:</span>
+                <span id="strength-text">Weak</span>
+                <div class="strength-meter">
+                    <div id="strength-bar"></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <div class="slider-header">
+                        <label for="length-slider">Password Length</label>
+                        <span id="length-val">16</span>
+                    </div>
+                    <input type="range" id="length-slider" min="4" max="50" value="16">
+                </div>
+
+                <div class="options-grid">
+                    <label class="option-checkbox">
+                        <input type="checkbox" id="uppercase" checked>
+                        <span class="custom-check"></span>
+                        Uppercase (A-Z)
+                    </label>
+                    
+                    <label class="option-checkbox">
+                        <input type="checkbox" id="lowercase" checked>
+                        <span class="custom-check"></span>
+                        Lowercase (a-z)
+                    </label>
+                    
+                    <label class="option-checkbox">
+                        <input type="checkbox" id="numbers" checked>
+                        <span class="custom-check"></span>
+                        Numbers (0-9)
+                    </label>
+                    
+                    <label class="option-checkbox">
+                        <input type="checkbox" id="symbols">
+                        <span class="custom-check"></span>
+                        Symbols (!@#$)
+                    </label>
+                </div>
+
+                <p id="error-message" class="error-hidden">Please select at least one character type!</p>
+
+                <button id="generate-btn" class="btn-primary">Generate Password</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
