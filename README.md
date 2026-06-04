@@ -1,6 +1,6 @@
 # Password Generator (Mini Tool)
 
-A small, client-side password generator built with HTML, CSS, and vanilla JavaScript.
+A small password generator project built with HTML, CSS, and  JavaScript.
 
 ## Features
 - Generate passwords of configurable length
