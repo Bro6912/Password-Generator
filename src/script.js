@@ -119,10 +119,10 @@ copyBtn.addEventListener('click', async () => {
     try {
         await navigator.clipboard.writeText(password);
         copyText.innerText = 'Copied!';
-        copyBtn.style.background = '#10b981'; // Green confirmation color
+        copyBtn.style.background = '#10b981';
         copyBtn.style.color = '#ffffff';
 
-        // Revert UI configuration back to normal after a brief window
+        
         setTimeout(() => {
             copyText.innerText = 'Copy';
             copyBtn.style.background = '#38bdf8';
